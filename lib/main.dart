@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mero_kitchen_app/screens/dish_overview_screen.dart';
+
+import 'screens/auth_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +36,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.dark,
-      home: MyHomePage(title: 'مطبخ ميرو'),
+      routes: {
+        DishOverViewScreen.routeName:(context)=>DishOverViewScreen(title: "مطبخ ميرو",),
+        AuthScreen.routeName: (context) => AuthScreen(),
+      },
+      home: AuthScreen(),
     );
   }
 }
