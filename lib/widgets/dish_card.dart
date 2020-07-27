@@ -14,7 +14,7 @@ class DishCard extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
           ),
-          color: Color.fromRGBO(65, 66, 68, 1),
+          color: Color.fromRGBO(66, 66, 66, 1),
           margin: EdgeInsets.only(bottom: 40),
           // margin bottom to allow place the button
           child: Container(
@@ -60,7 +60,7 @@ class DishCard extends StatelessWidget {
           width: 80,
           height: 80,
           child: FloatingActionButton(
-              backgroundColor: Color.fromRGBO(243, 122, 39, 1),
+              backgroundColor: Colors.red,
               onPressed: () {},
               tooltip: 'إضافة إلي المفضلة',
               child: Icon(
