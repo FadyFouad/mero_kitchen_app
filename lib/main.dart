@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mero_kitchen_app/pages/auth_screen.dart';
 import 'package:mero_kitchen_app/pages/dish_overview_page.dart';
+import 'package:mero_kitchen_app/pages/favorites_page.dart';
+import 'package:mero_kitchen_app/pages/settings_page.dart';
+import 'package:mero_kitchen_app/widgets/my_bottom_navigation.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,12 +54,12 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       routes: {
-        DishOverViewPage.routeName: (context) => DishOverViewPage(
-              title: "مطبخ ميرو",
-            ),
+        DishOverViewPage.routeName: (context) => DishOverViewPage(title: "مطبخ ميرو"),
+        FavoritesPage.routeName: (context) => FavoritesPage(title: "مطبخ ميرو"),
+        SettingsPage.routeName: (context) => SettingsPage(title: "مطبخ ميرو"),
         AuthScreen.routeName: (context) => AuthScreen(),
       },
-      home: AuthScreen(),
+      home: CustomBottomNavBar(),
     );
   }
 }

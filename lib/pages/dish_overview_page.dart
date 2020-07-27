@@ -16,9 +16,7 @@ class DishOverViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(this.title)),
-      body: Container(
+    return Container(
         child: Column(
           children: [
             Container(
@@ -86,24 +84,6 @@ class DishOverViewPage extends StatelessWidget {
             )
           ],
         ),
-      ),
-      bottomNavigationBar: CustomBottomNavBar(),
-//      BottomNavigationBar(
-//        backgroundColor: Colors.deepOrange,
-//        items: [
-//          BottomNavigationBarItem(
-//            icon: Icon(Icons.ac_unit),
-//            title: Text("Fav"),
-//          ),
-//          BottomNavigationBarItem(
-//            icon: Icon(Icons.ac_unit),
-//            title: Text("home"),
-//          ),BottomNavigationBarItem(
-//            icon: Icon(Icons.ac_unit),
-//            title: Text("settings"),
-//          ),
-//        ],
-//      ),
     );
   }
 }
