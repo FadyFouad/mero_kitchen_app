@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mero_kitchen_app/screens/dish_overview_screen.dart';
-
-import 'screens/auth_screen.dart';
+import 'package:mero_kitchen_app/pages/auth_screen.dart';
+import 'package:mero_kitchen_app/pages/dish_overview_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +24,8 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             headline6: TextStyle(
                 fontFamily: 'Scheherazade',
-                fontSize: 24.0,),
+                fontSize: 24.0,
+                color: Colors.black),
           ),
         ),
         // This makes the visual density adapt to the platform that you run
@@ -49,9 +49,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       routes: {
-        DishOverViewScreen.routeName: (context) => DishOverViewScreen(
+        DishOverViewPage.routeName: (context) => DishOverViewPage(
               title: "مطبخ ميرو",
             ),
         AuthScreen.routeName: (context) => AuthScreen(),

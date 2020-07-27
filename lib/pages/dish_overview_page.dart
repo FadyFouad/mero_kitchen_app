@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mero_kitchen_app/widgets/my_bottom_navigation.dart';
 
 import '../widgets/dish_card.dart';
 
@@ -7,11 +8,11 @@ import '../widgets/dish_card.dart';
 ///*** Created by Fady Fouad on 26-Jul-20 at 15:13.***
 ///****************************************************
 
-class DishOverViewScreen extends StatelessWidget {
+class DishOverViewPage extends StatelessWidget {
   static final String routeName = "/dish_overview";
   final title;
 
-  const DishOverViewScreen({Key key, this.title}) : super(key: key);
+  const DishOverViewPage({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,23 @@ class DishOverViewScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).backgroundColor,
+                    padding: EdgeInsets.all(16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    onPressed: () => {},
+                  ),
+                  FlatButton(
+                    child: Text(
+                      'Foods',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    color: Theme.of(context).backgroundColor,
+                    padding: EdgeInsets.all(16.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
@@ -58,20 +75,7 @@ class DishOverViewScreen extends StatelessWidget {
                           color: Colors.white),
                     ),
                     color: Theme.of(context).accentColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    onPressed: () => {},
-                  ),
-                  FlatButton(
-                    child: Text(
-                      'Foods',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    color: Theme.of(context).accentColor,
+                    padding: EdgeInsets.all(16.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16.0),
                     ),
@@ -83,19 +87,23 @@ class DishOverViewScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.deepOrange,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.ac_unit),
-            title: Text("1"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.ac_unit),
-            title: Text("2"),
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNavBar(),
+//      BottomNavigationBar(
+//        backgroundColor: Colors.deepOrange,
+//        items: [
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.ac_unit),
+//            title: Text("Fav"),
+//          ),
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.ac_unit),
+//            title: Text("home"),
+//          ),BottomNavigationBarItem(
+//            icon: Icon(Icons.ac_unit),
+//            title: Text("settings"),
+//          ),
+//        ],
+//      ),
     );
   }
 }
