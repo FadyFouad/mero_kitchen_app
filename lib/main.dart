@@ -15,11 +15,17 @@ class MyApp extends StatelessWidget {
       title: 'مطبخ ميرو',
       theme: ThemeData(
         // This is the theme of your application.
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.red,
+        primaryColor: Colors.white,
+        primaryColorDark: Colors.white,
+        accentColor: Color.fromRGBO(255, 120, 91, 1),
+        backgroundColor: Color.fromRGBO(222, 232, 255, 1),
         fontFamily: 'Scheherazade',
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
-            headline6: TextStyle(fontFamily: 'Scheherazade',fontSize: 24),
+            headline6: TextStyle(
+                fontFamily: 'Scheherazade',
+                fontSize: 24.0,),
           ),
         ),
         // This makes the visual density adapt to the platform that you run
@@ -28,22 +34,26 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData.dark().copyWith(
-        primaryColor: Color.fromRGBO(39, 43, 46, 100),
-        primaryColorDark: Color.fromRGBO(39, 43, 46, 100),
-        backgroundColor: Color.fromRGBO(39, 43, 46, 100),
-        scaffoldBackgroundColor: Color.fromRGBO(39, 43, 46, 100),
-        accentColor: Color.fromRGBO(243, 122, 39, 100),
+        primaryColor: Color.fromRGBO(39, 43, 46, 1),
+        primaryColorDark: Color.fromRGBO(39, 43, 46, 1),
+        backgroundColor: Color.fromRGBO(66, 66, 66, 1),
+        scaffoldBackgroundColor: Color.fromRGBO(39, 43, 46, 1),
+        accentColor: Color.fromRGBO(243, 122, 39, 1),
 //        TextColor: Color.fromRGBO(244, 125, 41,100),
-        textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Scheherazade'),
+        textTheme: ThemeData.dark().textTheme.apply(
+              fontFamily: 'Scheherazade',
+            ),
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(
-            headline6: TextStyle(fontFamily: 'Scheherazade',fontSize: 24),
+            headline6: TextStyle(fontFamily: 'Scheherazade', fontSize: 24),
           ),
         ),
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       routes: {
-        DishOverViewScreen.routeName:(context)=>DishOverViewScreen(title: "مطبخ ميرو",),
+        DishOverViewScreen.routeName: (context) => DishOverViewScreen(
+              title: "مطبخ ميرو",
+            ),
         AuthScreen.routeName: (context) => AuthScreen(),
       },
       home: AuthScreen(),
