@@ -28,6 +28,12 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       darkTheme: ThemeData.dark().copyWith(
+        primaryColor: Color.fromRGBO(39, 43, 46, 100),
+        primaryColorDark: Color.fromRGBO(39, 43, 46, 100),
+        backgroundColor: Color.fromRGBO(39, 43, 46, 100),
+        scaffoldBackgroundColor: Color.fromRGBO(39, 43, 46, 100),
+        accentColor: Color.fromRGBO(243, 122, 39, 100),
+//        TextColor: Color.fromRGBO(244, 125, 41,100),
         textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Scheherazade'),
         appBarTheme: AppBarTheme(
           textTheme: TextTheme(

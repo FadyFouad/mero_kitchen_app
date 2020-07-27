@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 ///****************************************************
 ///*** Created by Fady Fouad on 26-Jul-20 at 15:17.***
@@ -10,35 +11,62 @@ class DishCard extends StatelessWidget {
     return Stack(
       children: [
         Card(
-          color: Colors.red,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25.0),
+          ),
+          color: Color.fromRGBO(65, 66, 68, 1),
           margin: EdgeInsets.only(bottom: 40),
           // margin bottom to allow place the button
           child: Container(
             child: Column(
               children: <Widget>[
-                Image.network('https://img.youtube.com/vi/I5ah_dfU5O4/0.jpg'),
+                Container(
+                  height: 150,
+                  width: 150,
+                  margin: EdgeInsets.only(
+                      top: 30.0, bottom: 20.0, left: 10.0, right: 10.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          'https://img.youtube.com/vi/I5ah_dfU5O4/0.jpg'),
+                    ),
+                  ),
+                ),
                 Text(
-                  'https://img.youtube.com/vi/I5ah_dfU5O4/0.jpg',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
+                  'Dish Name',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...',
+                    style: TextStyle(
+                      fontSize: 22,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
-            height: 750,
-            width: 420.0,
+            height: 600,
+            width: 350.0,
           ),
         ),
         Positioned(
           bottom: 0,
-          right: 170,
+          right: 130,
           width: 80,
           height: 80,
           child: FloatingActionButton(
-              backgroundColor: Color(0xFFF2638E),
+              backgroundColor: Color.fromRGBO(243, 122, 39, 1),
               onPressed: () {},
+              tooltip: 'إضافة إلي المفضلة',
               child: Icon(
-                Icons.favorite,
+                FontAwesomeIcons.solidHeart,
                 size: 50,
+                color: Colors.white,
               )),
         ),
       ],
