@@ -10,6 +10,7 @@ import 'package:mero_kitchen_app/pages/settings_page.dart';
 ///****************************************************
 
 class CustomBottomNavBar extends StatefulWidget {
+  static final routeName = "/CustomBottomNavBar";
   @override
   _CustomBottomNavBarState createState() => _CustomBottomNavBarState();
 }
@@ -38,13 +39,15 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         break;
     }
   }
+
   GlobalKey _bottomNavigationKey = GlobalKey();
+
 //  int pageIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(title: Text('مطبخ ميرو')),
+      appBar: AppBar(title: Text('مطبخ ميرو')),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: pageIndex,
@@ -62,8 +65,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         onTap: (index) {
           setState(
             () {
-                _currentPage = _selectedPage(index);
-                print(_currentPage);
+              _currentPage = _selectedPage(index);
+              print(_currentPage);
 //            switch (index) {
 //              case 0:
 //                pageIndex = 0;
@@ -82,9 +85,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           );
         },
       ),
-      body: Center(
-        child: _currentPage
-      ),
+      body: Center(child: _currentPage),
     );
   }
 }

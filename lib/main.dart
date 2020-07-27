@@ -54,12 +54,13 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       routes: {
+        AuthScreen.routeName: (context) => AuthScreen(),
+        CustomBottomNavBar.routeName: (context) => CustomBottomNavBar(),
         DishOverViewPage.routeName: (context) => DishOverViewPage(title: "مطبخ ميرو"),
         FavoritesPage.routeName: (context) => FavoritesPage(title: "مطبخ ميرو"),
         SettingsPage.routeName: (context) => SettingsPage(title: "مطبخ ميرو"),
-        AuthScreen.routeName: (context) => AuthScreen(),
       },
-      home: CustomBottomNavBar(),
+      home: AuthScreen(),
     );
   }
 }

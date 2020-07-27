@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mero_kitchen_app/pages/dish_overview_page.dart';
+import 'package:mero_kitchen_app/widgets/my_bottom_navigation.dart';
 
 ///****************************************************
 ///*** Created by Fady Fouad on 26-Jul-20 at 17:35.***
@@ -146,7 +147,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 16,color: Colors.white)),
                     onPressed: () => Navigator.of(context)
-                        .pushNamed(DishOverViewPage.routeName),
+                        .pushNamed(CustomBottomNavBar.routeName),
                   ),
                 ),
                 const SizedBox(height: 40.0),

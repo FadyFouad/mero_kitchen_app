@@ -6,6 +6,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 ///****************************************************
 
 class DishCard extends StatelessWidget {
+  final title;
+  final desc;
+  final imageUrl;
+  final isFav;
+
+  const DishCard(
+      {Key key,
+      @required this.title,
+      @required this.desc,
+      @required this.imageUrl,
+      this.isFav = false})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,19 +42,18 @@ class DishCard extends StatelessWidget {
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'https://img.youtube.com/vi/I5ah_dfU5O4/0.jpg'),
+                      image: NetworkImage(imageUrl),
                     ),
                   ),
                 ),
                 Text(
-                  'Dish Name',
+                  title,
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...Dish Description...',
+                    desc,
                     style: TextStyle(
                       fontSize: 22,
                     ),
@@ -64,7 +76,7 @@ class DishCard extends StatelessWidget {
               onPressed: () {},
               tooltip: 'إضافة إلي المفضلة',
               child: Icon(
-                FontAwesomeIcons.solidHeart,
+                isFav ? FontAwesomeIcons.solidHeart:FontAwesomeIcons.heart,
                 size: 30,
                 color: Colors.white,
               )),
