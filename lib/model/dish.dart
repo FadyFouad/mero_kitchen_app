@@ -21,6 +21,7 @@ class Dish {
   final String desc;
   final String category;
   final String imageUrl;
+  final String videoUrl;
   final bool isFav;
   final int duration;
   final List<String> ingredients;
@@ -38,6 +39,7 @@ class Dish {
     @required this.desc,
     @required this.category,
     @required this.imageUrl,
+    @required this.videoUrl,
     @required this.duration,
     @required this.ingredients,
     @required this.steps,
@@ -47,6 +49,6 @@ class Dish {
     @required this.isLactoseFree,
     @required this.isVegan,
     @required this.isVegetarian,
-    @required this.isFav,
+    this.isFav=false,
   });
 }

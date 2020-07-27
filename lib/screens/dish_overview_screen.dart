@@ -19,6 +19,19 @@ class DishOverViewScreen extends StatelessWidget {
       body: Container(
         child: Center(child: DishCard()),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.deepOrange,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            title: Text("1"),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit),
+            title: Text("2"),
+          ),
+        ],
+      ),
     );
   }
 }
