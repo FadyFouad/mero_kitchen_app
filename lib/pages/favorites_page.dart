@@ -7,9 +7,6 @@ import 'package:mero_kitchen_app/widgets/my_bottom_navigation.dart';
 
 class FavoritesPage extends StatelessWidget {
   static final String routeName = "/favorites_page";
-  final title;
-
-  const FavoritesPage({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

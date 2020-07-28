@@ -10,60 +10,67 @@ class DishCard extends StatelessWidget {
   final desc;
   final imageUrl;
   final isFav;
+  final onCardTap;
 
-  const DishCard(
-      {Key key,
-      @required this.title,
-      @required this.desc,
-      @required this.imageUrl,
-      this.isFav = false})
+  const DishCard({Key key,
+    @required this.title,
+    @required this.desc,
+    @required this.imageUrl,
+    @required this.onCardTap,
+    this.isFav = false,})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.0),
-          ),
-          color: Theme.of(context).backgroundColor,
-          margin: EdgeInsets.only(bottom: 40),
-          // margin bottom to allow place the button
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 150,
-                  width: 150,
-                  margin: EdgeInsets.only(
-                      top: 30.0, bottom: 20.0, left: 10.0, right: 10.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(imageUrl),
-                    ),
-                  ),
-                ),
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    desc,
-                    style: TextStyle(
-                      fontSize: 22,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+        InkWell(
+          onTap:onCardTap,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.0),
             ),
-            height: 600,
-            width: 350.0,
+            color: Theme
+                .of(context)
+                .backgroundColor,
+            margin: EdgeInsets.only(bottom: 40),
+            // margin bottom to allow place the button
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 150,
+                    width: 150,
+                    margin: EdgeInsets.only(
+                        top: 30.0, bottom: 20.0, left: 10.0, right: 10.0),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(imageUrl),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      desc,
+                      style: TextStyle(
+                        fontSize: 22,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+              height: 600,
+              width: 350.0,
+            ),
           ),
         ),
         Positioned(
@@ -72,11 +79,14 @@ class DishCard extends StatelessWidget {
           width: 80,
           height: 80,
           child: FloatingActionButton(
-              backgroundColor: Theme.of(context).accentColor,
+              heroTag: key,
+              backgroundColor: Theme
+                  .of(context)
+                  .accentColor,
               onPressed: () {},
               tooltip: 'إضافة إلي المفضلة',
               child: Icon(
-                isFav ? FontAwesomeIcons.solidHeart:FontAwesomeIcons.heart,
+                isFav ? FontAwesomeIcons.solidHeart : FontAwesomeIcons.heart,
                 size: 30,
                 color: Colors.white,
               )),

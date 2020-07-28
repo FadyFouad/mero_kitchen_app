@@ -6,9 +6,6 @@ import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
   static final String routeName = "/settings_page";
-  final title;
-
-  const SettingsPage({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

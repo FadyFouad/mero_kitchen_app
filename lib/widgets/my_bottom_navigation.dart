@@ -17,11 +17,11 @@ class CustomBottomNavBar extends StatefulWidget {
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   int pageIndex = 1;
-  final DishOverViewPage _dishOverView = DishOverViewPage(title: 'Title');
-  final FavoritesPage _favoritesPage = FavoritesPage(title: 'Title');
-  final SettingsPage _settingsPage = SettingsPage(title: 'Title');
+  final DishOverViewPage _dishOverView = DishOverViewPage();
+  final FavoritesPage _favoritesPage = FavoritesPage();
+  final SettingsPage _settingsPage = SettingsPage();
 
-  Widget _currentPage = DishOverViewPage(title: 'Title');
+  Widget _currentPage = DishOverViewPage();
 
   Widget _selectedPage(int pageIndex) {
     switch (pageIndex) {
@@ -51,7 +51,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: pageIndex,
-        height: 50.0,
+        height: 60.0,
         items: <Widget>[
           Icon(FontAwesomeIcons.heart, size: 30),
           Icon(FontAwesomeIcons.home, size: 30),
