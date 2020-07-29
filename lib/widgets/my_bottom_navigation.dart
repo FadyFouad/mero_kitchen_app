@@ -47,7 +47,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('مطبخ ميرو')),
+//      appBar: AppBar(title: Text('مطبخ ميرو')),
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
         index: pageIndex,
@@ -67,20 +67,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             () {
               _currentPage = _selectedPage(index);
               print(_currentPage);
-//            switch (index) {
-//              case 0:
-//                pageIndex = 0;
-////                Navigator.pushNamed(context, FavoritesPage.routeName);
-//                break;
-//              case 1:
-//                pageIndex = 1;
-//                Navigator.pushNamed(context, DishOverViewPage.routeName);
-//                break;
-//              case 2:
-//                pageIndex = 2;
-////                Navigator.pushNamed(context, SettingsPage.routeName);
-//                break;
-//            }
             },
           );
         },

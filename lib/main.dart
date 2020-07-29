@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mero_kitchen_app/pages/auth_screen.dart';
+import 'package:mero_kitchen_app/pages/details_page.dart';
 import 'package:mero_kitchen_app/pages/dish_overview_page.dart';
 import 'package:mero_kitchen_app/pages/favorites_page.dart';
 import 'package:mero_kitchen_app/pages/settings_page.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromRGBO(66, 66, 66, 1),
           scaffoldBackgroundColor: Color.fromRGBO(39, 43, 46, 1),
           accentColor: Color.fromRGBO(243, 122, 39, 1),
-//        TextColor: Color.fromRGBO(244, 125, 41,100),
+//        textColor: Color.fromRGBO(244, 125, 41,100),
           textTheme: ThemeData.dark().textTheme.apply(
                 fontFamily: 'Scheherazade',
               ),
@@ -61,39 +62,14 @@ class MyApp extends StatelessWidget {
         routes: {
           AuthScreen.routeName: (context) => AuthScreen(),
           CustomBottomNavBar.routeName: (context) => CustomBottomNavBar(),
-          DishOverViewPage.routeName: (context) =>
-              DishOverViewPage(),
+          DishOverViewPage.routeName: (context) => DishOverViewPage(),
+          DetailsPage.routeName: (context) => DetailsPage(),
           FavoritesPage.routeName: (context) => FavoritesPage(),
           SettingsPage.routeName: (context) => SettingsPage(),
         },
         home: AuthScreen(),
-//        home: DishOverViewPage(),
+//        home: CustomBottomNavBar(),
       ),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({this.title});
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text(widget.title)),
-      ),
-      body: Center(
-          child: Text(
-        'مطبخ ميرو',
-        style: TextStyle(fontSize: 80),
-      )),
     );
   }
 }
